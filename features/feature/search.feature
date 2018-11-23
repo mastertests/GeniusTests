@@ -1,6 +1,6 @@
 # language: en
 @feature
-Feature: Result searching for search words
+Feature: Artist searching for artist name
 
   Background: Open Genius page
     Given I open main page

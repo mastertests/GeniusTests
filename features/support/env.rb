@@ -12,14 +12,14 @@ Selenium::WebDriver::Edge.driver_path = './drivers/MicrosoftWebDriver.exe'
 
 # Init driver
 Before do
-  case browser
-  when 'chrome'
-    @browser = Selenium::WebDriver.for :chrome
-  when 'edge'
-    @browser = Selenium::WebDriver.for :edge
-  else
-    @browser = Selenium::WebDriver.for :firefox
-  end
+  @browser = case browser
+             when 'chrome'
+               Selenium::WebDriver.for :chrome
+             when 'edge'
+               Selenium::WebDriver.for :edge
+             else
+               Selenium::WebDriver.for :firefox
+             end
 end
 
 # Go fullscreen
