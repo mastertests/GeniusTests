@@ -1,0 +1,1 @@
+default: --color -r features --format html --out report/report.html BROWSER=chrome

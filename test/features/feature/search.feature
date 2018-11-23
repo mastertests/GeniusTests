@@ -16,13 +16,13 @@ Feature: Artist searching for artist name
       | i61            |
 
   Scenario: Open first song in top songs should contain context
-    When I click on "chart_row--large_border" with "class" locator
+    When I click on "chart_row-two_line_title_and_artist-title" with "class" locator
     Then I should see element with "class" "cover_art-image"
     And I should see element with "class" "header_with_cover_art-primary_info-title"
     And I should see element with "class" "header_with_cover_art-primary_info-primary_artist"
 
   Scenario: Open artist page of first song should contain context
-    When I click on "chart_row--large_border" with "class" locator
-    And I click on "drop-element-attached-center" with "class" locator
-    Then I should see element with "class" "user_avatar profile_header-avatar"
+    When I click on "chart_row-two_line_title_and_artist-title" with "class" locator
+    And I click on "header_with_cover_art-primary_info-primary_artist" with "class" locator
+    Then I should see element with "class" "profile_header-avatar"
     And I should see element with "class" "profile_identity-name_iq_and_role_icon"
