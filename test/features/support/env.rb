@@ -1,11 +1,12 @@
 require 'rubygems'
 require 'selenium-webdriver'
 
-browser = ENV['BROWSER']
-
 @main_page_url = 'https://genius.com/'
 @large_duration = 6 # sec
 @small_duration = 2 # sec
+
+browser = ENV['BROWSER']
+duration = @small_duration
 
 ## Creating WebDriver
 # Init path to drivers
@@ -35,7 +36,7 @@ end
 After '@feature' do
   @driver.manage.delete_all_cookies
   @driver.quit
-  sleep @small_duration
+  sleep duration
 end
 
 # Close browser after all scenario if it didn't

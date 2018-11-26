@@ -13,10 +13,17 @@ Feature: Check main page content
       | class        | logo_link        |
       | class        | footer-copyright |
 
+  Scenario Outline: Genius main page should not contain elements
+    Then I should not see element with "<locator_type>" "<locator>"
+    Examples: Elements with locator type
+      | locator_type | locator                                                |
+      | xpath        | //a[@href='/new']                                      |
+      | xpath        | //a[@href='/forums']                                   |
+      | xpath        | //header-admin[@open-header-menus='open_header_menus'] |
+
   Scenario: Click on Shop should open Shop Page
     When I click on "Shop" with "name" locator
-    And I click on "hero-CTA" with "class" locator
-    Then I should see element with "class" "site-header__logo-link"
+    Then I should see element with "class" "drawer-page-content"
 
   Scenario Outline: Top songs should has right number
     When I click on Show More "<number_of_times>" times
